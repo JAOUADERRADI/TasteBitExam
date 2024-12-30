@@ -10,7 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "^1.10.3",
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/supabase": "^1.4.5",
+    "axios": "^1.7.9",
     "nuxt": "^3.15.0",
+    "sass": "^1.83.0",
     "vue": "latest",
     "vue-router": "latest"
   }

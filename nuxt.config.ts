@@ -30,4 +30,6 @@ export default defineNuxtConfig({
     '~/components/ui',
     '~/components/specific/home',
   ],
+
+  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon'],
 })
