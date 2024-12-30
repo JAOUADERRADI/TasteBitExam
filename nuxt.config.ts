@@ -22,5 +22,12 @@ export default defineNuxtConfig({
     },
   },
 
-  devtools: { enabled: true }
+  devtools: { enabled: true },
+
+  components: [
+    '~/components',
+    '~/components/global',
+    '~/components/ui',
+    '~/components/specific/home',
+  ],
 })
