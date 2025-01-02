@@ -32,4 +32,9 @@ export default defineNuxtConfig({
   ],
 
   modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon'],
+
+  // Configuration de Supabase
+  supabase: {
+    redirect: false,
+  },
 })

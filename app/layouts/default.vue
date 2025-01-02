@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div>
-        layous default
-    </div>
+    <main>
+        <slot />
+    </main>
 </template>
