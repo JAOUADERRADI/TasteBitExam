@@ -22,6 +22,8 @@ export default defineNuxtConfig({
     },
   },
 
+  css: ['@/assets/css/global.css'],
+
   devtools: { enabled: true },
 
   components: [
@@ -31,7 +33,7 @@ export default defineNuxtConfig({
     '~/components/specific/home',
   ],
 
-  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon'],
+  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@vueuse/nuxt'],
 
   // Configuration de Supabase
   supabase: {
