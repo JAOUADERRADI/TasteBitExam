@@ -1,6 +1,4 @@
 <template>
-    <div>
-      home page
-    </div>
+    <HomeHero />
   </template>
   

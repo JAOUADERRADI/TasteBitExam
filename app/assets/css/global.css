@@ -2,6 +2,7 @@
   --bg-color: #fff;
   --text-color: #333;
   --accent-color: #FD7E14;
+  --bg-accent-color: #FFDBC8;
 
   /* Spacings in multiples of 4px */
   --spacing-xxs: 0.25rem; /* 4px - Extra extra small */
@@ -17,6 +18,7 @@
   --bg-color: #111;
   --text-color: #fff;
   --accent-color: #FFB68A;
+  --bg-accent-color: #321300;
 }
 
 body {

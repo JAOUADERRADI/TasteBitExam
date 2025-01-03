@@ -1,3 +1,7 @@
+import { config } from 'dotenv';
+config({ path: '.env' });
+config({ path: '.env.local', override: true });
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -38,5 +42,11 @@ export default defineNuxtConfig({
   // Configuration de Supabase
   supabase: {
     redirect: false,
+  },
+
+  runtimeConfig: {
+    public: {
+      spoonacularApiKey: process.env.SPOONACULAR_API_KEY,
+    },
   },
 })

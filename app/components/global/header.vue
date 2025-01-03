@@ -114,6 +114,7 @@ const toggleMenu = () => {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
+        max-width: calc(100% - 32px);
         padding: var(--spacing-sm) var(--spacing-md);
     }
 
