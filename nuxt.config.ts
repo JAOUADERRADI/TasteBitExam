@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     '~/components/specific/home',
   ],
 
-  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@vueuse/nuxt'],
+  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@vueuse/nuxt', '@pinia/nuxt'],
 
   // Configuration de Supabase
   supabase: {

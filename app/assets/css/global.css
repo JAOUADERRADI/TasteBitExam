@@ -3,6 +3,7 @@
   --text-color: #333;
   --accent-color: #FD7E14;
   --bg-accent-color: #FFDBC8;
+  --border-color: #ddd;
 
   /* Spacings in multiples of 4px */
   --spacing-xxs: 0.25rem; /* 4px - Extra extra small */
@@ -15,10 +16,11 @@
 }
 
 .dark {
-  --bg-color: #111;
-  --text-color: #fff;
-  --accent-color: #FFB68A;
-  --bg-accent-color: #321300;
+  --bg-color: #181a1b;
+  --text-color: #e0e0e0;
+  --accent-color: #FF6F61;
+  --bg-accent-color: #2a2e32;
+  --border-color: #333;
 }
 
 body {
@@ -27,4 +29,9 @@ body {
   margin: 0;
   font-family: "Arial", sans-serif;
   transition: background 0.3s, color 0.3s;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }

@@ -55,15 +55,19 @@ const toggleMenu = () => {
 
 <style scoped>
 .header {
-    max-width: 80%;
-    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-sm) var(--spacing-lg);
     background: var(--bg-color);
     color: var(--text-color);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    z-index: 999;
 }
 
 .logo .link{
