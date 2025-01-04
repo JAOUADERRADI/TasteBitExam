@@ -1,3 +1,7 @@
+import { config } from 'dotenv';
+config({ path: '.env' });
+config({ path: '.env.local', override: true });
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -22,6 +26,8 @@ export default defineNuxtConfig({
     },
   },
 
+  css: ['@/assets/css/global.css'],
+
   devtools: { enabled: true },
 
   components: [
@@ -31,5 +37,16 @@ export default defineNuxtConfig({
     '~/components/specific/home',
   ],
 
-  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon'],
+  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@vueuse/nuxt', '@pinia/nuxt'],
+
+  // Configuration de Supabase
+  supabase: {
+    redirect: false,
+  },
+
+  runtimeConfig: {
+    public: {
+      spoonacularApiKey: process.env.SPOONACULAR_API_KEY,
+    },
+  },
 })

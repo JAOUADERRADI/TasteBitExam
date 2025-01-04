@@ -2,7 +2,14 @@
 </script>
 
 <template>
-    <div>
-        layous default
-    </div>
+    <Header />
+    <main>
+        <slot />
+    </main>
 </template>
+
+<style scoped>
+main {
+    margin-top: 60px;
+}
+</style>
