@@ -40,7 +40,8 @@ const {
             </div>
 
             <button type="submit" :disabled="loading" class="sign-btn">Sign Up</button>
-
+            <p v-if="errorMsg" class="error">{{ errorMsg }}</p>
+            <p v-if="successMsg" class="success">{{ successMsg }}</p>
             <p class="text">
               Forgotten your password or you login details?
               <a href="#">Get help</a> signing in
@@ -51,9 +52,6 @@ const {
           <img src="../../assets/images/sign-up.svg" alt="">
         </div>
       </div>
-
-      <p v-if="errorMsg" class="error">{{ errorMsg }}</p>
-      <p v-if="successMsg" class="success">{{ successMsg }}</p>
     </div>
   </section>
 
@@ -176,23 +174,11 @@ label {
 
 .error {
   color: #e63946;
-  background: #ffe8e8;
-  border: 1px solid #e63946;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
-  font-size: 0.95rem;
-  text-align: center;
   margin-top: 1rem;
 }
 
 .success {
   color: #2d6a4f;
-  background: #e8f5e9;
-  border: 1px solid #2d6a4f;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
-  font-size: 0.95rem;
-  text-align: center;
   margin-top: 1rem;
 }
 
