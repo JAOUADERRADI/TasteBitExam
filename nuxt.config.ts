@@ -31,9 +31,16 @@ export default defineNuxtConfig({
     '~/components/specific/home',
   ],
 
-  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon'],
+  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@nuxt/test-utils/module'],
 
   supabase: {
     redirect: false,
+  },
+
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseApiKey: process.env.SUPABASE_KEY,
+    },
   },
 })

@@ -2,7 +2,13 @@
 </script>
 
 <template>
-    <div>
-        layous default
-    </div>
+    <main>
+        <slot />
+    </main>
 </template>
+
+<style scoped>
+main {
+    margin-top: 60px;
+}
+</style>
