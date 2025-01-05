@@ -10,6 +10,10 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
+
+
+
+
   // Fonctionnalités expérimentales activées
   experimental: {
     scanPageMeta: 'after-resolve',    // Optimisation des métadonnées après résolution des pages
@@ -37,7 +41,7 @@ export default defineNuxtConfig({
     '~/components/specific/home',
   ],
 
-  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@vueuse/nuxt', '@pinia/nuxt'],
+  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@vueuse/nuxt', '@pinia/nuxt', '@nuxt/test-utils/module'],
 
   // Configuration de Supabase
   supabase: {
