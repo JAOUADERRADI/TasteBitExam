@@ -22,7 +22,7 @@ const {
             <header class="heading">
               <h2>Get Started</h2>
               <h6>Already have an account?</h6>
-              <a href="#" class="toggle">Sign in</a>
+              <NuxtLink to="/auth/login" class="toggle">Sign in</NuxtLink>
             </header>
 
             <div class="input-wrap">
@@ -170,6 +170,11 @@ label {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.text {
+  font-size: 0.85rem;
+  color: #777;
 }
 
 .error {
