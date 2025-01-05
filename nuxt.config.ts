@@ -6,6 +6,10 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
+
+
+
+
   // Fonctionnalités expérimentales activées
   experimental: {
     scanPageMeta: 'after-resolve',    // Optimisation des métadonnées après résolution des pages
@@ -21,6 +25,8 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  css: ['@/assets/css/global.css'],
 
   devtools: { enabled: true },
 
