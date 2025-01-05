@@ -59,6 +59,24 @@ export const useAuthService = () => {
         }
     };
 
+    /**
+     * Gère le processus de connexion des utilisateurs.
+     * Envoie les identifiants de l'utilisateur à Supabase pour l'authentification.
+     * Redirige vers la page de profil en cas de succès ou met à jour le message d'erreur en cas d'échec.
+     */
+    const handleSignIn = async () => {
+        errorMsg.value = null;
+
+        try {
+            const { error } = await client.auth.signInWithPassword({ email: email.value, password: password.value });
+            if (error) throw error;
+
+            // await router.push('/profile');
+        } catch (error) {
+            errorMsg.value = error.message || 'An error occurred during sign-in.';
+        }
+    };
+
     return {
         email,
         password,
@@ -66,5 +84,6 @@ export const useAuthService = () => {
         errorMsg,
         successMsg,
         registerAccount,
+        handleSignIn,
     };
 };
