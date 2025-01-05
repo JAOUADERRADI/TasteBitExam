@@ -101,5 +101,6 @@ export const useAuthService = () => {
         successMsg,
         registerAccount,
         handleSignIn,
+        handleLogout,
     };
 };
