@@ -77,6 +77,22 @@ export const useAuthService = () => {
         }
     };
 
+    /**
+     * Gère le processus de déconnexion des utilisateurs.
+     * Communique avec Supabase pour déconnecter l'utilisateur et redirige vers la page de connexion.
+     * Met à jour les messages d'erreur en cas d'échec du processus.
+     */
+    const handleLogout = async () => {
+        try {
+            const { error } = await client.auth.signOut();
+            if (error) throw error;
+
+            await router.push('/login');
+        } catch (error) {
+            errorsMsg.value = error.message || 'An error occurred during logout.';
+        }
+    };
+
     return {
         email,
         password,
