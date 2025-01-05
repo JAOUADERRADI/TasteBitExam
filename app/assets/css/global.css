@@ -1,0 +1,43 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --accent-color: #fd7e14;
+  --bg-accent-color: #ffdbc8;
+  --border-color: #ddd;
+
+  /* Spacings in multiples of 4px */
+  --spacing-xxs: 0.25rem; /* 4px - Extra extra small */
+  --spacing-xs: 0.5rem; /* 8px - Extra small */
+  --spacing-sm: 1rem; /* 16px - Small */
+  --spacing-md: 1.5rem; /* 24px - Medium */
+  --spacing-lg: 2rem; /* 32px - Large */
+  --spacing-xl: 3rem; /* 48px - Extra large */
+  --spacing-xxl: 4rem; /* 64px - Extra extra large */
+}
+
+.dark {
+  --bg-color: #181a1b;
+  --text-color: #e0e0e0;
+  --accent-color: #ff6f61;
+  --bg-accent-color: #2a2e32;
+  --border-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
