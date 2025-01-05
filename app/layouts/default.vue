@@ -2,10 +2,7 @@
 </script>
 
 <template>
-<<<<<<< HEAD
     <Header />
-=======
->>>>>>> feature/auth
     <main>
         <slot />
     </main>
