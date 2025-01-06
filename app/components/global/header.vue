@@ -70,7 +70,7 @@ const isAuthenticated = computed(() => !!user.value);
 
                 <!-- Authentication -->
                 <div v-if="!isAuthenticated" class="auth">
-                    <NuxtLink to="/auth/login" class="login-button">Se connecter</NuxtLink>
+                    <NuxtLink to="/auth/login" class="login-button">Login</NuxtLink>
                 </div>
                 <div v-else class="profile" ref="dropdownRef">
                     <button class="profile-button" @click="toggleDropdown">
@@ -156,10 +156,6 @@ const isAuthenticated = computed(() => !!user.value);
     color: var(--accent-color);
 }
 
-.login-button {
-    display: block;
-}
-
 .container-icon {
     width: 10%;
     display: flex;
@@ -208,6 +204,17 @@ const isAuthenticated = computed(() => !!user.value);
 .dropdown li:hover {
     background: var(--accent-color);
     color: var(--bg-color);
+}
+
+.login-button {
+    display: none;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--spacing-xs);
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /* Responsive Design */
