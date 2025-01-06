@@ -28,7 +28,7 @@ onMounted(async () => {
     <h2>Salads</h2>
     <ul class="recipe-list">
       <RecipeCard
-        v-for="recipe in saladRecipes"
+        v-for="recipe in saladRecipes.slice(0,4)"
         :key="recipe.id"
         :recipe="recipe"
       />
@@ -40,7 +40,7 @@ onMounted(async () => {
     <h2>Dessert</h2>
     <ul class="recipe-list">
       <RecipeCard
-        v-for="recipe in cakeRecipes"
+        v-for="recipe in cakeRecipes.slice(0,4)"
         :key="recipe.id"
         :recipe="recipe"
       />

@@ -1,0 +1,14 @@
+export const CATEGORIES = [
+    'main course',
+    'side dish',
+    'dessert',
+    'appetizer',
+    'salad',
+    'bread',
+    'breakfast',
+    'soup',
+    'beverage',
+    'sauce',
+    'drink',
+];
+  

@@ -136,8 +136,9 @@ export const fetchRecipesByCategory = async (category, runtimeConfig) => {
       query: {
         apiKey,
         type: category,
-        number: 4,
+        number: 52,
         addRecipeInformation: true, // Inclure les informations détaillées de la recette
+        fillIngredients: true,      // Inclure des informations détaillées sur les ingrédients
       },
     });
 
