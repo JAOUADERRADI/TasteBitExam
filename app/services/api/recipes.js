@@ -40,7 +40,7 @@ export const fetchRecipes = async (query, runtimeConfig) => {
       query: {
         apiKey,
         query,
-        number: 12, // Nombre de résultats à récupérer
+        number: 52, // Nombre de résultats à récupérer
         addRecipeInformation: true, // Inclure des détails supplémentaires sur les recettes
         fillIngredients: true,      // Inclure des informations détaillées sur les ingrédients
       },

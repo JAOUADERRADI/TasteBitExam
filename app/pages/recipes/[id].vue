@@ -79,20 +79,32 @@ onMounted(() => {
 
           <!-- Temps de préparation -->
           <div class="info-item">
-            <i class="fa-solid fa-clock"></i>
-            <p><strong>Preparation Time:</strong> {{ recipe.readyInMinutes }} minutes</p>
+            <p>
+              <strong>
+                <Icon name="fa-solid:clock" />
+              </strong> 
+              {{ recipe.readyInMinutes }} minutes
+            </p>
           </div>
 
           <!-- Nombre de personnes -->
           <div class="info-item">
-            <i class="fa-solid fa-user-group"></i>
-            <p><strong>Serves:</strong> {{ recipe.servings }} people</p>
+            <p>
+              <strong>
+                <Icon name="fa-solid:user" />
+              </strong> 
+              {{ recipe.servings }} people
+            </p>
           </div>
 
           <!-- Bouton imprimer -->
           <div class="info-item">
-            <i class="fa-solid fa-print"></i>
-            <button @click="printPage">Print</button>
+            <p>
+              <strong>
+                <Icon name="fa-solid:print" @click="printPage"/>
+              </strong>
+              Print
+            </p>
           </div>
 
         </div>
@@ -181,6 +193,7 @@ onMounted(() => {
 
 .info-items {
   max-width: 350px;
+  padding-bottom: 12px;
   margin: auto;
   display: flex;
   justify-content: space-between;
