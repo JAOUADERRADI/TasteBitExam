@@ -71,7 +71,7 @@ export const useAuthService = () => {
             const { error } = await client.auth.signInWithPassword({ email: email.value, password: password.value });
             if (error) throw error;
 
-            // await router.push('/profile');
+            await router.push('/profile');
         } catch (error) {
             errorMsg.value = error.message || 'An error occurred during sign-in.';
         }
@@ -87,7 +87,7 @@ export const useAuthService = () => {
             const { error } = await client.auth.signOut();
             if (error) throw error;
 
-            await router.push('/login');
+            await router.push('/auth/login');
         } catch (error) {
             errorsMsg.value = error.message || 'An error occurred during logout.';
         }
