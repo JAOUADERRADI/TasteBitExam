@@ -1,5 +1,7 @@
 <script setup>
 definePageMeta({
+  title: 'My Profile | TasteBit',
+  description: 'View and manage your profile information.',
   middleware: 'auth',
 });
 import { useProfileService } from '@/services/api/profileService';
@@ -14,17 +16,17 @@ fetchProfile();
 </script>
 
 <template>
-  <div class="profile-page">
+  <div class="profile-page" aria-label="User Profile Page">
     <h1>My Profile</h1>
-    <div v-if="profile">
+    <div v-if="profile" aria-label="User profile details">
       <p><strong>First Name:</strong> {{ profile.first_name }}</p>
       <p><strong>Last Name:</strong> {{ profile.last_name }}</p>
       <p><strong>Bio:</strong> {{ profile.bio }}</p>
-      <button @click="editProfile">Edit Profile</button>
+      <button @click="editProfile" aria-label="Edit your profile">Edit Profile</button>
       <!-- <a @click="deleteProfile">Delete Profile</a> -->
     </div>
     <div v-else class="create-profile">
-      <p>Profile not found. <button @click="createNewProfile">Create Profile</button></p>
+      <p>Profile not found. <button @click="createNewProfile" aria-label="Create a new profile">Create Profile</button></p>
     </div>
   </div>
 

@@ -10,10 +10,6 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-
-
-
-
   // Fonctionnalités expérimentales activées
   experimental: {
     scanPageMeta: 'after-resolve',    // Optimisation des métadonnées après résolution des pages
@@ -39,6 +35,7 @@ export default defineNuxtConfig({
     '~/components/global',
     '~/components/ui',
     '~/components/specific/home',
+    '~/components/specific/form',
   ],
 
   modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@vueuse/nuxt', '@pinia/nuxt', '@nuxt/test-utils/module'],
@@ -51,6 +48,16 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       spoonacularApiKey: process.env.SPOONACULAR_API_KEY,
+    },
+  },
+
+
+  image: {
+    screens: {
+      sm: 320,
+      md: 640,
+      lg: 1024,
+      xl: 1280,
     },
   },
 })

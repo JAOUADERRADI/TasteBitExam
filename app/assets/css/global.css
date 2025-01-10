@@ -247,7 +247,7 @@ ul {
 }
 
 
-button {
+/* button {
   display: inline-block;
   width: 100%;
   height: auto;
@@ -265,7 +265,7 @@ button {
 button:hover {
   color: var(--text-color);
   background-color: var(--bg-accent-color);
-}
+} */
 
 .delete-profile-page {
   padding: var(--spacing-lg) var(--spacing-md);

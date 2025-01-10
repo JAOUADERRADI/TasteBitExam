@@ -1,7 +1,4 @@
 <script setup>
-/**
- * Importer le service pour récupérer les détails des recettes.
- */
 import { fetchRecipeDetails } from '@/services/api/recipes';
 
 /**
@@ -35,6 +32,31 @@ const loadRecipeDetails = async () => {
   try {
     const runtimeConfig = useRuntimeConfig();
     recipe.value = await fetchRecipeDetails(recipeId, runtimeConfig);
+    useHead({
+      title: `${recipe.value.title} | Tastebit`,
+      meta: [
+        {
+          name: 'description',
+          content: recipe.value.summary.replace(/<[^>]+>/g, ''),
+        },
+        {
+          property: 'og:title',
+          content: `${recipe.value.title} | Tastebit`,
+        },
+        {
+          property: 'og:description',
+          content: recipe.value.summary.replace(/<[^>]+>/g, ''),
+        },
+        {
+          property: 'og:image',
+          content: recipe.value.image,
+        },
+        {
+          property: 'og:url',
+          content: `https://www.tastebit.com/recipes/${recipeId}`,
+        }
+      ],
+    });
   } catch (error) {
     console.error('Error while loading the recipe details:', error);
   }
@@ -58,15 +80,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="recipe-page">
+  <div class="recipe-page" aria-label="Recipe Details Page">
     <!-- Loader en attendant les données -->
-    <div v-if="!recipe" class="loading">
+    <div v-if="!recipe" class="loading" aria-label="Loading recipe details">
       <p>Loading recipe details...</p>
     </div>
 
     <!-- Contenu de la recette -->
-    <div v-else class="recipe-container">
-      <h1 class="recipe-title">{{ recipe.title }}</h1>
+    <article v-else class="recipe-container" aria-labelledby="recipe-title">
+      <h1 class="recipe-title" id="recipe-title">{{ recipe.title }}</h1>
 
       <!-- Image principale -->
       <div class="recipe-image-container">
@@ -74,34 +96,34 @@ onMounted(() => {
       </div>
 
       <!-- Informations générales -->
-      <div class="recipe-info">
+      <div class="recipe-info" aria-label="Recipe Information">
         <div class="info-items">
 
           <!-- Temps de préparation -->
           <div class="info-item">
-            <p>
+            <p aria-label="Preparation time in minutes">
               <strong>
                 <Icon name="fa-solid:clock" />
-              </strong> 
+              </strong>
               {{ recipe.readyInMinutes }} minutes
             </p>
           </div>
 
           <!-- Nombre de personnes -->
           <div class="info-item">
-            <p>
+            <p aria-label="Number of servings">
               <strong>
                 <Icon name="fa-solid:user" />
-              </strong> 
+              </strong>
               {{ recipe.servings }} people
             </p>
           </div>
 
           <!-- Bouton imprimer -->
           <div class="info-item">
-            <p>
+            <p aria-label="Print this recipe">
               <strong>
-                <Icon name="fa-solid:print" @click="printPage"/>
+                <Icon name="fa-solid:print" @click="printPage" />
               </strong>
               Print
             </p>
@@ -126,7 +148,7 @@ onMounted(() => {
         <h3 class="section-title">Instructions</h3>
         <div class="instructions" v-html="recipe.instructions"></div>
       </div>
-    </div>
+    </article>
   </div>
 </template>
 

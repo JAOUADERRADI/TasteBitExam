@@ -1,5 +1,7 @@
 <script setup>
 definePageMeta({
+  title: 'Edit Profile | TasteBit',
+  description: 'Update your profile information, email, or password.',
   middleware: 'auth',
 });
 
@@ -46,24 +48,24 @@ const submitPasswordForm = async () => {
 </script>
 
 <template>
-  <div class="edit-profile-page">
+  <div class="edit-profile-page" aria-label="Edit Profile Page">
     <h1>Edit Profile</h1>
 
     <!-- Formulaire pour le profil -->
-    <form @submit.prevent="submitProfileForm">
+    <form @submit.prevent="submitProfileForm" aria-label="Edit Profile Form">
       <div>
         <label for="first_name">First Name</label>
-        <input id="first_name" v-model="form.first_name" required />
+        <input id="first_name" v-model="form.first_name" required aria-label="Enter your first name" placeholder="John"/>
       </div>
       <div>
         <label for="last_name">Last Name</label>
-        <input id="last_name" v-model="form.last_name" required />
+        <input id="last_name" v-model="form.last_name" required aria-label="Enter your last name" placeholder="Doe"/>
       </div>
       <div>
         <label for="bio">Bio</label>
-        <textarea id="bio" v-model="form.bio"></textarea>
+        <textarea id="bio" v-model="form.bio"  aria-label="Write a short bio" placeholder="Tell us something about yourself..."></textarea>
       </div>
-      <button type="submit">Update Profile</button>
+      <button type="submit" aria-label="Update profile information">Update Profile</button>
     </form>
 
     <div v-if="profileErrorMsg" class="error-msg">{{ profileErrorMsg }}</div>
@@ -71,26 +73,26 @@ const submitPasswordForm = async () => {
 
     <!-- Formulaire pour l'email -->
     <h2>Update Email</h2>
-    <form @submit.prevent="submitEmailForm">
+    <form @submit.prevent="submitEmailForm" aria-label="Update Email Form">
       <div>
         <label for="email">New Email</label>
-        <input id="email" v-model="authForm.email" type="email" required />
+        <input id="email" v-model="authForm.email" type="email" required aria-label="Enter your new email address" placeholder="example@example.com"/>
       </div>
-      <button type="submit">Update Email</button>
+      <button type="submit" aria-label="Update email address">Update Email</button>
     </form>
 
     <!-- Formulaire pour le mot de passe -->
     <h2>Update Password</h2>
-    <form @submit.prevent="submitPasswordForm">
+    <form @submit.prevent="submitPasswordForm" aria-label="Update Password Form">
       <div>
         <label for="old_password">Old Password</label>
-        <input id="old_password" v-model="authForm.old_password" type="password" required />
+        <input id="old_password" v-model="authForm.old_password" type="password" required aria-label="Enter your current password" placeholder="Current password"/>
       </div>
       <div>
         <label for="new_password">New Password</label>
-        <input id="new_password" v-model="authForm.new_password" type="password" required />
+        <input id="new_password" v-model="authForm.new_password" type="password" required aria-label="Enter your new password" placeholder="New password"/>
       </div>
-      <button type="submit">Update Password</button>
+      <button type="submit" aria-label="Update password">Update Password</button>
     </form>
 
     <div v-if="authErrorMsg" class="error-msg">{{ authErrorMsg }}</div>

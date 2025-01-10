@@ -1,63 +1,20 @@
-<script setup>
-import { useAuthService } from '@/services/api/auth';
-
-const { email, password, errorMsg, handleSignIn } = useAuthService();
-</script>
-
 <template>
-  <section>
+  <section class="container-form">
     <div class="box">
       <div class="inner-box">
         <div class="forms-wrap">
-          <form @submit.prevent="handleSignIn">
-            <header class="heading">
-              <h2>Sign In</h2>
-              <h6>Don't have an account?</h6>
-              <NuxtLink to="/auth/register" class="toggle">Sign Up</NuxtLink>
-            </header>
-
-            <div class="input-wrap">
-              <label for="email">Email:</label>
-              <input
-                id="email"
-                class="input-field"
-                v-model="email"
-                type="email"
-                required
-                placeholder="Enter your email"
-              />
-            </div>
-
-            <div class="input-wrap">
-              <label for="password">Password:</label>
-              <input
-                id="password"
-                class="input-field"
-                v-model="password"
-                type="password"
-                required
-                placeholder="Enter your password"
-              />
-            </div>
-
-            <button type="submit" class="sign-btn">Sign In</button>
-            <p v-if="errorMsg" class="error">{{ errorMsg }}</p>
-            <p class="text">
-              Forgotten your password or your login details?
-              <a href="#">Get help</a> signing in
-            </p>
-          </form>
+          <AuthForm />
         </div>
         <div class="section-img">
-          <img src="../../assets/images/sign-up.svg" alt="" />
+          <img src="../../assets/images/sign-up.svg" alt="Sign up illustration" />
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<style scoped>
-section {
+<style>
+.container-form {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -93,72 +50,6 @@ section {
   max-width: 400px;
 }
 
-form {
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: 1.5rem;
-}
-
-.heading h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #151111;
-}
-
-.heading h6 {
-  color: #bababa;
-  font-weight: 400;
-  font-size: 0.9rem;
-  display: inline;
-}
-
-.input-wrap {
-  position: relative;
-}
-
-.input-field {
-  width: 100%;
-  height: auto;
-  background: none;
-  border: 1px solid #bbb;
-  outline: none;
-  border-radius: 0.5rem;
-  padding: 0.8rem;
-  font-size: 0.95rem;
-  color: #151111;
-  transition: 0.4s;
-}
-
-label {
-  font-size: 0.95rem;
-  color: #bbb;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.sign-btn {
-  display: inline-block;
-  width: 100%;
-  height: auto;
-  padding: 0.8rem;
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-  border: none;
-  cursor: pointer;
-  border-radius: 0.8rem;
-  font-size: 0.95rem;
-  transition: 0.3s;
-}
-
-.sign-btn:hover {
-  color: var(--text-color);
-  background-color: var(--bg-accent-color);
-}
-
 .section-img {
   width: 100%;
   max-width: 400px;
@@ -166,19 +57,8 @@ label {
 }
 
 .section-img img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
   display: block;
-}
-
-.error {
-  color: #e63946;
-  margin-top: 1rem;
-}
-
-.text {
-  font-size: 0.85rem;
-  color: #777;
 }
 
 @media (min-width: 768px) {
@@ -198,17 +78,14 @@ label {
   }
 }
 
-@media (max-width: 576px) {
-  .heading h2 {
-    font-size: 1.5rem;
+@media (max-width: 768px) {
+  .box {
+    max-width: calc(100% - 32px);
   }
 
-  .input-field {
-    font-size: 0.85rem;
-  }
-
-  .sign-btn {
-    font-size: 0.85rem;
+  .inner-box {
+    width: 100%;
+    margin: auto;
   }
 }
 </style>

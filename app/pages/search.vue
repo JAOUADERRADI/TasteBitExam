@@ -2,24 +2,39 @@
 import { useRecipesStore } from '~/stores/recipes';
 
 const recipesStore = useRecipesStore();
+
+useHead({
+  title: 'Recherche de Recettes | TasteBit',
+  meta: [
+    {
+      name: 'description',
+      content: 'Recherchez des recettes délicieuses et inspirantes sur Taste Bit. Découvrez des plats qui conviennent à toutes les occasions.',
+    },
+    {
+      name: 'keywords',
+      content: 'recettes, recherche de recettes, cuisine, plats délicieux, Taste Bit',
+    },
+  ],
+});
 </script>
 
 <template>
-  <section class="search-page">
+  <section class="search-page"  aria-label="Search for Recipes">
     <h1>Recherche de Recettes</h1>
     <SearchForm />
 
-    <div v-if="recipesStore.currentResults.length" class="results">
+    <div v-if="recipesStore.currentResults.length" class="results" aria-label="List of recipes matching your search">
       <ul>
         <RecipeCard
           v-for="recipe in recipesStore.currentResults"
           :key="recipe.id"
           :recipe="recipe"
+          aria-label="Recipe card for {{ recipe.title }}"
         />
       </ul>
     </div>
 
-    <div v-if="!recipesStore.currentResults.length && !loading && !error">
+    <div v-if="!recipesStore.currentResults.length && !loading && !error" aria-label="No recipes found message">
       <p>Aucune recette trouvée. Essayez une autre recherche.</p>
     </div>
   </section>

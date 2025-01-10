@@ -1,6 +1,35 @@
 <script setup>
 import { fetchRecipesByCategory } from '@/services/api/recipes';
-import { ref, onMounted } from 'vue';
+
+definePageMeta({
+  title: 'Tastebit | Discover Recipes, Ideas, and Inspiration for Every Meal',
+  meta: [
+    {
+      name: 'description',
+      content: 'Explore a wide range of curated content, resources, and ideas to help you elevate your daily experiences. Perfect for every taste and occasion!',
+    },
+    {
+      name: 'keywords',
+      content: 'recipes, inspiration, ideas, tips, guides, food, lifestyle',
+    },
+    {
+      property: 'og:title',
+      content: 'Tastebit | Your Ultimate Resource for Inspiration and Ideas',
+    },
+    {
+      property: 'og:description',
+      content: 'Find expert tips, guides, and curated content to enhance your lifestyle and daily experiences.',
+    },
+    {
+      property: 'og:image',
+      content: 'https://www.tastebit.comi/mages/logo.jpg',
+    },
+    {
+      property: 'og:url',
+      content: 'https://www.tastebit.com',
+    },
+  ],
+});
 
 // Références réactives pour stocker les recettes
 const saladRecipes = ref([]);
@@ -10,7 +39,7 @@ const cakeRecipes = ref([]);
 onMounted(async () => {
   try {
     const runtimeConfig = useRuntimeConfig(); // Récupérer la configuration d'exécution (clé API, etc.)
-    
+
     // Charger les recettes pour les deux catégories
     saladRecipes.value = await fetchRecipesByCategory('salad', runtimeConfig);
     cakeRecipes.value = await fetchRecipesByCategory('dessert', runtimeConfig);
@@ -22,28 +51,20 @@ onMounted(async () => {
 
 <template>
   <HomeHero />
-  
+
   <!-- Section for Salads -->
-  <div class="category-section">
+  <div class="category-section" aria-label="Section listing salad recipes">
     <h2>Salads</h2>
-    <ul class="recipe-list">
-      <RecipeCard
-        v-for="recipe in saladRecipes.slice(0,4)"
-        :key="recipe.id"
-        :recipe="recipe"
-      />
+    <ul class="recipe-list" aria-label="List of salad recipes">
+      <RecipeCard v-for="recipe in saladRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" />
     </ul>
   </div>
 
   <!-- Section for Cakes -->
-  <div class="category-section">
+  <div class="category-section" aria-label="Section listing dessert recipes">
     <h2>Dessert</h2>
-    <ul class="recipe-list">
-      <RecipeCard
-        v-for="recipe in cakeRecipes.slice(0,4)"
-        :key="recipe.id"
-        :recipe="recipe"
-      />
+    <ul class="recipe-list" aria-label="List of dessert recipes">
+      <RecipeCard v-for="recipe in cakeRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" />
     </ul>
   </div>
 </template>

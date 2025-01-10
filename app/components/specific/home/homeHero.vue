@@ -6,7 +6,7 @@
   <section class="hero">
     <!-- Image Section -->
     <div class="hero-image">
-      <img src="~/assets/images/hero.jpg" alt="Delicious Food" />
+      <NuxtImg src="/images/hero.jpg" alt="Delicious Food" />
     </div>
 
     <!-- Content Section -->
@@ -22,7 +22,7 @@
 .hero {
   max-width: 80%;
   max-height: 400px;
-  margin: auto;
+  margin: 80px auto;
   display: flex;
   align-items: center;
   background: var(--bg-accent-color);

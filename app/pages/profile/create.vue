@@ -1,5 +1,7 @@
 <script setup>
 definePageMeta({
+  title: 'Create a Profile | TasteBit',
+  description: 'Fill out the form to create your profile and join our community.',
   middleware: 'auth',
 });
 import { useProfileService } from '@/services/api/profileService';
@@ -18,22 +20,24 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <div class="create-profile-page">
+  <div class="create-profile-page" aria-label="Create Profile Page">
     <h1>Create a Profile</h1>
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm"  aria-label="Profile creation form">
       <div>
         <label for="first_name">First Name</label>
-        <input id="first_name" v-model="form.first_name" required />
+        <input id="first_name" v-model="form.first_name" required placeholder="John" aria-label="Enter your first name"/>
       </div>
       <div>
         <label for="last_name">Last Name</label>
-        <input id="last_name" v-model="form.last_name" required />
+        <input id="last_name" v-model="form.last_name" required aria-label="Enter your last name"
+        placeholder="Doe"/>
       </div>
       <div>
         <label for="bio">Bio</label>
-        <textarea id="bio" v-model="form.bio"></textarea>
+        <textarea id="bio" v-model="form.bio" aria-label="Write a short bio"
+        placeholder="Tell us something about yourself..."></textarea>
       </div>
-      <button type="submit">Create</button>
+      <button type="submit" aria-label="Submit profile creation form">Create</button>
     </form>
     <div v-if="errorMsg" class="error-msg">{{ errorMsg }}</div>
     <div v-if="successMsg" class="success-msg">{{ successMsg }}</div>
