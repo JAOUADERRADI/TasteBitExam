@@ -110,7 +110,6 @@ export const fetchRecipeDetails = async (recipeId, runtimeConfig) => {
   }
 };
 
-
 /**
  * Récupère une liste de recettes par catégorie (ex: "salade") à partir de l'API Spoonacular.
  *

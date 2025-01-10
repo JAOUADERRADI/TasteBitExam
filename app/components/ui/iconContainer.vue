@@ -11,6 +11,10 @@ const emit = defineEmits(['toggleDropdown', 'closeDropdown']);
 const toggleDarkMode = () => {
   mode.value = mode.value === 'dark' ? 'light' : 'dark';
 };
+
+watch(user, (newValue) => {
+  isAuthenticated.value = !!newValue;
+});
 </script>
 
 <template>

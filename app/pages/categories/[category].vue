@@ -64,6 +64,7 @@ onMounted(async () => {
 .category-page {
   width: 80%;
   margin: auto;
+  padding: var(--spacing-lg);
 }
 
 .recipe-list {
@@ -74,7 +75,7 @@ onMounted(async () => {
 
 @media (min-width: 1024px) {
   .recipe-list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 

@@ -42,7 +42,7 @@ useHead({
 
 <style scoped>
 .search-page {
-  max-width: 70%;
+  max-width: 80%;
   margin: auto;
   padding: var(--spacing-lg);
 }
