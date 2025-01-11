@@ -126,12 +126,6 @@ ul {
   gap: 8px;
 }
 
-@media (min-width: 769px) {
-  .container-icon {
-    display: flex;
-  }
-}
-
 /* Menu déroulant dans le profil utilisateur */
 .profile {
   position: relative;
@@ -192,7 +186,29 @@ ul {
   background-color: var(--bg-accent-color);
 }
 
-/* Design responsive pour petits écrans */
+.delete-profile-page {
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-radius: var(--spacing-xs);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.delete-profile-page h1 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--accent-color);
+}
+
+.delete-profile-page p {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .header {
     width: 100%;
@@ -242,9 +258,32 @@ ul {
   .login-button {
     display: none;
   }
+
+  .profile-page, 
+  .create-profile-page, 
+  .delete-profile-page {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .profile-page h1,
+  .create-profile-page h1,
+  .delete-profile-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-page p,
+  .delete-profile-page p {
+    font-size: 1rem;
+  }
+
+  .profile-page button,
+  .create-profile-page button,
+  .delete-profile-page button {
+    font-size: 0.9rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
 }
 
-/* Design pour grands écrans */
 @media (min-width: 769px) {
   .nav ul {
     display: flex;
@@ -253,103 +292,14 @@ ul {
   .nav-toggle {
     display: none;
   }
-}
 
-
-/* button {
-  display: inline-block;
-  width: 100%;
-  height: auto;
-  padding: 0.8rem;
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-  border: none;
-  cursor: pointer;
-  border-radius: 0.8rem;
-  font-size: 0.95rem;
-  transition: 0.3s;
-  margin-bottom: 8px;
-}
-
-button:hover {
-  color: var(--text-color);
-  background-color: var(--bg-accent-color);
-} */
-
-.delete-profile-page {
-  padding: var(--spacing-lg) var(--spacing-md);
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
-  background: var(--bg-color);
-  color: var(--text-color);
-  border-radius: var(--spacing-xs);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.delete-profile-page h1 {
-  font-size: 2rem;
-  margin-bottom: var(--spacing-lg);
-  color: var(--accent-color);
-}
-
-.delete-profile-page p {
-  margin-bottom: var(--spacing-md);
-  font-size: 1.1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .profile-page {
-    padding: var(--spacing-md) var(--spacing-sm);
+  .container-icon {
+    display: flex;
   }
 
-  .profile-page h1 {
-    font-size: 1.5rem;
-  }
-
-  .profile-page p {
-    font-size: 1rem;
-  }
-
-  .profile-page button {
-    font-size: 0.9rem;
-    padding: var(--spacing-xs) var(--spacing-sm);
-  }
-
-  .create-profile-page {
-    padding: var(--spacing-md) var(--spacing-sm);
-  }
-
-  .create-profile-page h1 {
-    font-size: 1.5rem;
-  }
-
-  .create-profile-page button {
-    font-size: 0.9rem;
-    padding: var(--spacing-xs) var(--spacing-sm);
-  }
-
+  .profile-page, 
+  .create-profile-page, 
   .delete-profile-page {
-    padding: var(--spacing-md) var(--spacing-sm);
-  }
-
-  .delete-profile-page h1 {
-    font-size: 1.5rem;
-  }
-
-  .delete-profile-page p {
-    font-size: 1rem;
-  }
-
-  .delete-profile-page button {
-    font-size: 0.9rem;
-    padding: var(--spacing-xs) var(--spacing-sm);
-  }
-}
-
-@media (min-width: 769px) {
-  .profile-page {
     padding: var(--spacing-lg);
   }
 
@@ -357,38 +307,18 @@ button:hover {
     font-size: 2.5rem;
   }
 
-  .profile-page p {
-    font-size: 1.2rem;
-  }
-
-  .profile-page button {
-    font-size: 1rem;
-  }
-
-  .create-profile-page {
-    padding: var(--spacing-lg);
-  }
-
-  .create-profile-page h1 {
-    font-size: 2rem;
-  }
-
-  .create-profile-page button {
-    font-size: 1rem;
-  }
-
-  .delete-profile-page {
-    padding: var(--spacing-lg);
-  }
-
+  .create-profile-page h1,
   .delete-profile-page h1 {
     font-size: 2rem;
   }
 
+  .profile-page p,
   .delete-profile-page p {
     font-size: 1.2rem;
   }
 
+  .profile-page button,
+  .create-profile-page button,
   .delete-profile-page button {
     font-size: 1rem;
   }
