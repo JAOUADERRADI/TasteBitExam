@@ -22,7 +22,7 @@ const emit = defineEmits(['toggleMenu']);
       <li v-if="isAuthenticated"><NuxtLink @click="handleLogout" exact-active-class="active" class="link mobile">Logout</NuxtLink></li>
     </ul>
     <button @click="$emit('toggleMenu')" class="nav-toggle">
-      <Icon :name="isMenuOpen ? 'fa-solid:bars' : 'fa-solid:bars'" />
+      <Icon :name="isMenuOpen ? 'fa-solid:times' : 'fa-solid:bars'" />
     </button>
   </nav>
 </template>

@@ -57,6 +57,8 @@ const searchRecipes = async () => {
   padding: var(--spacing-xs);
   border: 1px solid var(--accent-color);
   border-radius: var(--spacing-xs);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .search-button {
@@ -71,5 +73,11 @@ const searchRecipes = async () => {
 .error {
   color: red;
   margin-top: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    padding: var(--spacing-sm);
+  }
 }
 </style>

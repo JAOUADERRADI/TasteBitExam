@@ -86,6 +86,9 @@ onMounted(async () => {
 }
 
 @media (max-width: 767px) {
+  .category-page {
+    width: calc(100% - 32px);
+  }
   .recipe-list {
     grid-template-columns: 1fr;
   }

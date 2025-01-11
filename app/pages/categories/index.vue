@@ -106,6 +106,13 @@ useHead({
   }
 }
 
+@media (max-width: 768px) {
+  .categories-container {
+    width: calc(100% - 32px);
+    margin: auto;
+  }
+}
+
 /* Desktop layout */
 @media (min-width: 1024px) {
   .categories-grid {

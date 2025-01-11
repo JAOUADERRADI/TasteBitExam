@@ -61,4 +61,11 @@ ul {
 .error {
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .search-page {
+    max-width: calc(100% - 30px);
+    padding: 0;
+  }
+}
 </style>
