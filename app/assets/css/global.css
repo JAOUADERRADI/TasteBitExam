@@ -78,6 +78,7 @@ ul {
 
 /* Menu de navigation */
 .nav ul {
+  font-size: 1.3rem;
   display: flex;
   gap: var(--spacing-sm);
   list-style: none;
@@ -86,7 +87,8 @@ ul {
 }
 
 /* Liens de navigation */
-.link {
+.link {  
+  margin: 0 var(--spacing-sm);
   text-decoration: none;
   color: var(--text-color);
   transition: color 0.3s ease, font-weight 0.3s;
@@ -94,7 +96,6 @@ ul {
 
 /* Effet hover sur les liens */
 .link:hover {
-  text-decoration: underline;
   color: var(--accent-color);
 }
 
