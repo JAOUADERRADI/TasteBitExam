@@ -39,7 +39,7 @@ const searchRecipes = async () => {
       class="search-input"
     />
     <button type="submit" class="search-button" :disabled="loading">
-      {{ loading ? "Recherche en cours..." : "Rechercher" }}
+      {{ loading ? "Searching..." : "Search" }}
     </button>
     <!-- <div v-if="error" class="error">{{ error }}</div> -->
   </form>

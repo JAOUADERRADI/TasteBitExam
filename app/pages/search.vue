@@ -4,15 +4,15 @@ import { useRecipesStore } from '~/stores/recipes';
 const recipesStore = useRecipesStore();
 
 useHead({
-  title: 'Recherche de Recettes | TasteBit',
+  title: 'Recipe Search | TasteBit',
   meta: [
     {
       name: 'description',
-      content: 'Recherchez des recettes délicieuses et inspirantes sur Taste Bit. Découvrez des plats qui conviennent à toutes les occasions.',
+      content: 'Search for delicious and inspiring recipes on Taste Bit. Discover dishes suitable for every occasion.',
     },
     {
       name: 'keywords',
-      content: 'recettes, recherche de recettes, cuisine, plats délicieux, Taste Bit',
+      content: 'recipes, recipe search, cooking, delicious dishes, Taste Bit',
     },
   ],
 });
