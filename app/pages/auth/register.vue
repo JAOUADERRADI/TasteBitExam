@@ -9,7 +9,7 @@
           <RegisterForm />
         </div>
         <div class="section-img">
-          <img src="../../assets/images/sign-up.svg" alt="Sign up illustration" />
+          <NuxtImg src="/images/sign-up.svg" alt="Sign up illustration" />
         </div>
       </div>
     </div>
