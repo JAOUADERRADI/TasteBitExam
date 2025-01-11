@@ -37,7 +37,8 @@ const submitForm = async () => {
         <textarea id="bio" v-model="form.bio" aria-label="Write a short bio"
         placeholder="Tell us something about yourself..."></textarea>
       </div>
-      <button type="submit" aria-label="Submit profile creation form">Create</button>
+      <!-- <button type="submit" aria-label="Submit profile creation form">Create</button> -->
+      <Button type="submit" aria-label="Submit profile creation form">Create</Button>
     </form>
     <div v-if="errorMsg" class="error-msg">{{ errorMsg }}</div>
     <div v-if="successMsg" class="success-msg">{{ successMsg }}</div>

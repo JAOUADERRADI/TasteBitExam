@@ -22,7 +22,8 @@ fetchProfile();
       <p><strong>First Name:</strong> {{ profile.first_name }}</p>
       <p><strong>Last Name:</strong> {{ profile.last_name }}</p>
       <p><strong>Bio:</strong> {{ profile.bio }}</p>
-      <button @click="editProfile" aria-label="Edit your profile">Edit Profile</button>
+      <Button @click="editProfile" aria-label="Edit your profile">Edit Profile</Button>
+      <!-- <button @click="editProfile" aria-label="Edit your profile">Edit Profile</button> -->
       <!-- <a @click="deleteProfile">Delete Profile</a> -->
     </div>
     <div v-else class="create-profile">

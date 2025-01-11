@@ -8,7 +8,7 @@ const { email, password, errorMsg, handleSignIn } = useAuthService();
 <template>
   <form @submit.prevent="handleSignIn">
     <FormHeader 
-      title="Welcome Back !" 
+      title="Welcome Back !"
       subtitle="Don't have an account?" 
       link="/auth/register" 
       linkText="Sign Up"

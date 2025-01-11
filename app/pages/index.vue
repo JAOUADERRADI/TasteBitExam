@@ -34,42 +34,51 @@ definePageMeta({
 // Références réactives pour stocker les recettes
 const saladRecipes = ref([]);
 const cakeRecipes = ref([]);
+const loading = ref(true);
+const errorMessage = ref(null);
 
 // Charger les recettes des catégories au montage
 onMounted(async () => {
   try {
     const runtimeConfig = useRuntimeConfig(); // Récupérer la configuration d'exécution (clé API, etc.)
-
+    loading.value = true;
     // Charger les recettes pour les deux catégories
     saladRecipes.value = await fetchRecipesByCategory('salad', runtimeConfig);
     cakeRecipes.value = await fetchRecipesByCategory('dessert', runtimeConfig);
   } catch (error) {
-    console.error('Error loading recipes:', error);
+    // console.error('Error loading recipes:', error);
+    errorMessage.value = 'An error occurred while loading the recipes.';
+  } finally {
+    loading.value = false;
   }
 });
 </script>
 
 <template>
   <HomeHero />
-
-  <!-- Section for Salads -->
-  <div class="category-section" aria-label="Section listing salad recipes">
-    <h2>Salads</h2>
-    <ul class="recipe-list" aria-label="List of salad recipes">
-      <RecipeCard v-for="recipe in saladRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" />
-    </ul>
+  <LoadingSpinner v-if="loading" text="Loading recipes..." />
+  <div v-else-if="errorMessage" class="error">
+      {{ errorMessage }}
   </div>
-
-  <!-- Section for Cakes -->
-  <div class="category-section" aria-label="Section listing dessert recipes">
-    <h2>Dessert</h2>
-    <ul class="recipe-list" aria-label="List of dessert recipes">
-      <RecipeCard v-for="recipe in cakeRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" />
-    </ul>
+  <div v-else>
+    <!-- Section for Salads -->
+    <div class="category-section" aria-label="Section listing salad recipes">
+      <h2>Salads</h2>
+      <ul class="recipe-list" aria-label="List of salad recipes">
+        <RecipeCard v-for="recipe in saladRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" />
+      </ul>
+    </div>
+    <!-- Section for Cakes -->
+    <div class="category-section" aria-label="Section listing dessert recipes">
+      <h2>Dessert</h2>
+      <ul class="recipe-list" aria-label="List of dessert recipes">
+        <RecipeCard v-for="recipe in cakeRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" />
+      </ul>
+    </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .category-section {
   max-width: 70%;
   margin: auto;
@@ -83,6 +92,11 @@ onMounted(async () => {
 .recipe-list {
   display: grid;
   gap: 20px;
+}
+
+.error {
+  text-align: center;
+  color: red;
 }
 
 @media (min-width: 1024px) {

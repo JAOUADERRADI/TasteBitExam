@@ -65,7 +65,8 @@ const submitPasswordForm = async () => {
         <label for="bio">Bio</label>
         <textarea id="bio" v-model="form.bio"  aria-label="Write a short bio" placeholder="Tell us something about yourself..."></textarea>
       </div>
-      <button type="submit" aria-label="Update profile information">Update Profile</button>
+      <Button type="submit" aria-label="Update profile information">Update Profile</Button>
+      <!-- <button type="submit" aria-label="Update profile information">Update Profile</button> -->
     </form>
 
     <div v-if="profileErrorMsg" class="error-msg">{{ profileErrorMsg }}</div>
@@ -78,7 +79,7 @@ const submitPasswordForm = async () => {
         <label for="email">New Email</label>
         <input id="email" v-model="authForm.email" type="email" required aria-label="Enter your new email address" placeholder="example@example.com"/>
       </div>
-      <button type="submit" aria-label="Update email address">Update Email</button>
+      <Button type="submit" aria-label="Update email address">Update Email</Button>
     </form>
 
     <!-- Formulaire pour le mot de passe -->
@@ -92,7 +93,8 @@ const submitPasswordForm = async () => {
         <label for="new_password">New Password</label>
         <input id="new_password" v-model="authForm.new_password" type="password" required aria-label="Enter your new password" placeholder="New password"/>
       </div>
-      <button type="submit" aria-label="Update password">Update Password</button>
+      <Button type="submit" aria-label="Update password">Update Password</Button>
+      <!-- <button type="submit" aria-label="Update password">Update Password</button> -->
     </form>
 
     <div v-if="authErrorMsg" class="error-msg">{{ authErrorMsg }}</div>
@@ -104,7 +106,7 @@ const submitPasswordForm = async () => {
 .edit-profile-page {
   padding: var(--spacing-lg) var(--spacing-md);
   max-width: 600px;
-  margin: auto;
+  margin: 100px auto;
   background: var(--bg-color);
   color: var(--text-color);
   border-radius: var(--spacing-xs);
