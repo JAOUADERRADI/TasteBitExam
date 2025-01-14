@@ -10,6 +10,12 @@ import { useAuthUpdateService } from '@/services/api/authUpdateService';
 
 const { profile, fetchProfile, updateProfile, errorMsg: profileErrorMsg, successMsg: profileSuccessMsg } = useProfileService();
 
+const form = ref({
+  first_name: '',
+  last_name: '',
+  bio: '',
+});
+
 onMounted(async () => {
   await fetchProfile();
   if (profile.value) {
@@ -50,7 +56,6 @@ const submitProfileForm = async () => {
 
     <div v-if="profileErrorMsg" class="error-msg">{{ profileErrorMsg }}</div>
     <div v-if="profileSuccessMsg" class="success-msg">{{ profileSuccessMsg }}</div>
-
   </div>
 </template>
 
