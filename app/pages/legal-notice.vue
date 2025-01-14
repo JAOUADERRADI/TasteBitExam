@@ -78,4 +78,10 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .legal-notice {
+        max-width: calc( 100% - 32px);
+    }
+}
 </style>

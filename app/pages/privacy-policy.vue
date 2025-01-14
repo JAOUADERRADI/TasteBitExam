@@ -102,6 +102,9 @@ ul li {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .privacy-policy {
+        max-width: calc( 100% - 32px );
+    }
     .title {
         font-size: 2rem;
     }

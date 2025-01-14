@@ -102,7 +102,6 @@ ul {
 /* Lien actif */
 .active {
   color: var(--accent-color);
-  font-weight: bold;
 }
 
 /* Bouton pour changer de mode (clair/sombre) */

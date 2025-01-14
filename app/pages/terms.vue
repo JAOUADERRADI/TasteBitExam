@@ -74,4 +74,10 @@ ul {
 ul li {
     margin-bottom: 0.5rem;
 }
+
+@media (max-width: 768px) {
+  .terms {
+    max-width: calc( 100% - 32px);
+  }
+}
 </style>

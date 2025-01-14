@@ -176,6 +176,10 @@ ul li {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .about-us {
+        max-width: calc( 100% - 32px);
+    }
+
     .features {
         flex-direction: column;
         gap: var(--spacing-md);
