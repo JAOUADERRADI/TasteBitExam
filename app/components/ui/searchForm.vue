@@ -35,7 +35,7 @@ const searchRecipes = async () => {
     <input
       type="text"
       v-model="query"
-      placeholder="Recherchez une recette..."
+      placeholder="Search recipes ..."
       class="search-input"
     />
     <button type="submit" class="search-button" :disabled="loading">

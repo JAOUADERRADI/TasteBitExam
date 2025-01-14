@@ -1,13 +1,21 @@
 <script setup>
 import { useAuthService } from '@/services/api/auth';
 
-const { handleLogout } = useAuthService();
-const user = useSupabaseUser();
-const isAuthenticated = ref(!!user.value);
 const props = defineProps({
   isMenuOpen: Boolean,
 });
+
+const { handleLogout } = useAuthService();
+const user = useSupabaseUser();
 const emit = defineEmits(['toggleMenu']);
+
+const isAuthenticated = ref(!!user.value);
+watch(
+  () => user.value,
+  (newValue) => {
+    isAuthenticated.value = !!newValue;
+  }
+);
 </script>
 
 <template>

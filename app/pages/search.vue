@@ -20,7 +20,7 @@ useHead({
 
 <template>
   <section class="search-page"  aria-label="Search for Recipes">
-    <h1>Recherche de Recettes</h1>
+    <h1>Search for recipes</h1>
     <SearchForm />
 
     <div v-if="recipesStore.currentResults.length" class="results" aria-label="List of recipes matching your search">
@@ -34,8 +34,8 @@ useHead({
       </ul>
     </div>
 
-    <div v-if="!recipesStore.currentResults.length && !loading && !error" aria-label="No recipes found message" class="error">
-      <p>Aucune recette trouvée. Essayez une autre recherche.</p>
+    <div v-if="!recipesStore.currentResults.length && !error" aria-label="No recipes found message" class="error">
+      <p>No recipes found. Try another search</p>
     </div>
   </section>
 </template>
