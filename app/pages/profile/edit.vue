@@ -9,19 +9,6 @@ import { useProfileService } from '@/services/api/profileService';
 import { useAuthUpdateService } from '@/services/api/authUpdateService';
 
 const { profile, fetchProfile, updateProfile, errorMsg: profileErrorMsg, successMsg: profileSuccessMsg } = useProfileService();
-const { updateEmail, updatePassword, errorMsg: authErrorMsg, successMsg: authSuccessMsg } = useAuthUpdateService();
-
-const form = ref({
-  first_name: '',
-  last_name: '',
-  bio: '',
-});
-
-const authForm = ref({
-  email: '',
-  old_password: '',
-  new_password: '',
-});
 
 onMounted(async () => {
   await fetchProfile();
@@ -37,14 +24,6 @@ const submitProfileForm = async () => {
   await updateProfile(form.value);
 };
 
-const submitEmailForm = async () => {
-  console.log("Email to be updated:", authForm.value.email);
-  await updateEmail(authForm.value.email);
-};
-
-const submitPasswordForm = async () => {
-  await updatePassword(authForm.value.old_password, authForm.value.new_password);
-};
 </script>
 
 <template>
@@ -72,33 +51,6 @@ const submitPasswordForm = async () => {
     <div v-if="profileErrorMsg" class="error-msg">{{ profileErrorMsg }}</div>
     <div v-if="profileSuccessMsg" class="success-msg">{{ profileSuccessMsg }}</div>
 
-    <!-- Formulaire pour l'email -->
-    <h2>Update Email</h2>
-    <form @submit.prevent="submitEmailForm" aria-label="Update Email Form">
-      <div>
-        <label for="email">New Email</label>
-        <input id="email" v-model="authForm.email" type="email" required aria-label="Enter your new email address" placeholder="example@example.com"/>
-      </div>
-      <Button type="submit" aria-label="Update email address">Update Email</Button>
-    </form>
-
-    <!-- Formulaire pour le mot de passe -->
-    <h2>Update Password</h2>
-    <form @submit.prevent="submitPasswordForm" aria-label="Update Password Form">
-      <div>
-        <label for="old_password">Old Password</label>
-        <input id="old_password" v-model="authForm.old_password" type="password" required aria-label="Enter your current password" placeholder="Current password"/>
-      </div>
-      <div>
-        <label for="new_password">New Password</label>
-        <input id="new_password" v-model="authForm.new_password" type="password" required aria-label="Enter your new password" placeholder="New password"/>
-      </div>
-      <Button type="submit" aria-label="Update password">Update Password</Button>
-      <!-- <button type="submit" aria-label="Update password">Update Password</button> -->
-    </form>
-
-    <div v-if="authErrorMsg" class="error-msg">{{ authErrorMsg }}</div>
-    <div v-if="authSuccessMsg" class="success-msg">{{ authSuccessMsg }}</div>
   </div>
 </template>
 
