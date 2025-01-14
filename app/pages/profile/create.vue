@@ -2,7 +2,7 @@
 definePageMeta({
   title: 'Create a Profile | TasteBit',
   description: 'Fill out the form to create your profile and join our community.',
-  middleware: 'auth',
+  middleware: 'guest-middleware',
 });
 import { useProfileService } from '@/services/api/profileService';
 

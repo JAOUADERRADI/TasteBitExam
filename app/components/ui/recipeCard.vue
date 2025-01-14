@@ -14,6 +14,8 @@ const props = defineProps({
   },
 });
 
+const user = useSupabaseUser();
+
 /**
  * Redirige l'utilisateur vers la page de détail de la recette sélectionnée.
  * @function goToRecipePage
@@ -42,7 +44,7 @@ onMounted(() => {
 
 <template>
   <li class="recipe-card" @click="goToRecipePage">
-    <div class="recipe-actions">
+    <div class="recipe-actions" v-if="user">
       <button
         class="like-button"
         @click.stop="toggleLike(props.recipe.id)"

@@ -2,7 +2,7 @@
 definePageMeta({
   title: 'Edit Profile | TasteBit',
   description: 'Update your profile information, email, or password.',
-  middleware: 'auth',
+  middleware: 'guest-middleware',
 });
 
 import { useProfileService } from '@/services/api/profileService';

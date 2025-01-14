@@ -2,7 +2,7 @@
 definePageMeta({
   title: 'Delete Profile | TasteBit',
   description: 'Confirm the deletion of your profile. This action is irreversible.',
-  middleware: 'auth',
+  middleware: 'guest-middleware',
 });
 import { useProfileService } from '@/services/api/profileService';
 

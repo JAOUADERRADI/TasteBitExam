@@ -1,4 +1,7 @@
 <script setup>
+definePageMeta({
+  middleware: 'guest-middleware',
+});
 import { useSupabaseClient, useSupabaseUser } from '#build/imports';
 import { fetchRecipeDetails } from '@/services/api/recipes';
 

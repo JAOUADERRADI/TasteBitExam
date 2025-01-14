@@ -1,3 +1,9 @@
+<script setup>
+definePageMeta({
+  middleware: 'auth-middleware',
+});
+</script>
+
 <template>
   <section class="container-form">
     <div class="box">

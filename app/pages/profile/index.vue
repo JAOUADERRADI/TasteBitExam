@@ -2,7 +2,7 @@
 definePageMeta({
   title: 'My Profile | TasteBit',
   description: 'View and manage your profile information.',
-  middleware: 'auth',
+  middleware: 'guest-middleware',
 });
 import { useProfileService } from '@/services/api/profileService';
 
