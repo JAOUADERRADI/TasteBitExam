@@ -15,7 +15,8 @@
                     <Icon name="fa-brands:youtube" />
                 </a>
             </div>
-            <div class="footerNav">
+
+            <nav class="footerNav">
                 <ul>
                     <li>
                         <NuxtLink to="/" class="link">
@@ -38,8 +39,26 @@
                         </NuxtLink>
                     </li>
                 </ul>
-            </div>
-
+            </nav>
+            <nav class="footerNav">
+                <ul>
+                    <li>
+                        <NuxtLink to="/privacy-policy" class="link">
+                            Privacy policy
+                        </NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/terms" class="link">
+                            Terms
+                        </NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/legal-policy" class="link">
+                            Legal policy
+                        </NuxtLink>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <div class="footerBottom">
             <p>Copyright &copy;2025</p>

@@ -88,8 +88,13 @@ onMounted(async () => {
     <h1>Mes Recettes Likées</h1>
     <LoadingSpinner v-if="loading" />
     <div v-else-if="likedRecipes.length === 0">No liked recipes found.</div>
-    <ul class="recipe-list" aria-label="List of liked recipes" v-for="recipe in likedRecipes" :key="recipe.id">
+    <!-- <ul class="recipe-list" aria-label="List of liked recipes" v-for="recipe in likedRecipes" :key="recipe.id">
       <RecipeCard :recipe="recipe" aria-label="Recipe card for {{ recipe.title }}" />
+    </ul> -->
+    <ul class="recipe-list" aria-label="List of liked recipes">
+      <li v-for="recipe in likedRecipes" :key="recipe.id" class="recipe-item">
+        <RecipeCard :recipe="recipe" aria-label="Recipe card for {{ recipe.title }}" />
+      </li>
     </ul>
   </section>
 </template>
@@ -102,6 +107,7 @@ onMounted(async () => {
 }
 
 .recipe-list {
+  list-style-type: none;
   margin-top: 40px;
   display: grid;
   gap: 20px;

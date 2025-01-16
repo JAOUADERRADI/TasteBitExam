@@ -62,19 +62,19 @@ onMounted(async () => {
   </div>
   <div v-else>
     <!-- Section for Salads -->
-    <div class="category-section" aria-label="Section listing salad recipes">
+    <section class="category-section" aria-label="Section listing salad recipes">
       <h2>Salads</h2>
       <ul class="recipe-list" aria-label="List of salad recipes">
         <RecipeCard v-for="recipe in saladRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" />
       </ul>
-    </div>
+    </section>
     <!-- Section for Cakes -->
-    <div class="category-section" aria-label="Section listing dessert recipes">
+    <section class="category-section" aria-label="Section listing dessert recipes">
       <h2>Dessert</h2>
       <ul class="recipe-list" aria-label="List of dessert recipes">
         <RecipeCard v-for="recipe in cakeRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" />
       </ul>
-    </div>
+    </section>
   </div>
 </template>
 

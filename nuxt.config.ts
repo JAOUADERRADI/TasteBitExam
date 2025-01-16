@@ -38,7 +38,15 @@ export default defineNuxtConfig({
     '~/components/specific/form',
   ],
 
-  modules: ['@nuxt/image', '@nuxtjs/supabase', '@nuxt/icon', '@vueuse/nuxt', '@pinia/nuxt', '@nuxt/test-utils/module'],
+  modules: [
+    '@nuxt/image',
+    '@nuxtjs/supabase',
+    '@nuxt/icon',
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@nuxt/test-utils/module',
+    '@nuxt/fonts',
+  ],
 
   // Configuration de Supabase
   supabase: {
@@ -50,7 +58,6 @@ export default defineNuxtConfig({
       spoonacularApiKey: process.env.SPOONACULAR_API_KEY,
     },
   },
-
 
   image: {
     screens: {
